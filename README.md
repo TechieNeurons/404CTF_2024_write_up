@@ -8,4 +8,12 @@ Write up for the 404CTF 2024 from the DGSE
 
 ### Easy
 - [x] [Intronisation du CHAUSSURE](./rev/intronisation_du_chaussure/)
-- [ ] [Bugdroid Fight \[1/2]](./)
+- [ ] [Bugdroid Fight 1/2](./)
+
+## Forensics
+
+### Introduction
+- [x] [Le tir aux logs](./forensics/le_tir_aux_logs/)
+
+### Medium
+- [ ] [Darts Bank]
