@@ -9,11 +9,14 @@ Attention : ce challenge contient du code à portée malveillante. Bien que l'au
 ```
 Je me dirigeais vers l'épreuve de lancer de fléchettes quand j'ai fait une découverte horrifiante : on m'a dérobé ma fléchette porte-bonheur ! Pourtant, cette dernière était bien sécurisée grâce à ma banque à fléchettes, DartsBank, et cette dernière a toutes les protections qui s'imposent... Même le petit cadenas vert ! Je crois avoir remarqué des choses étranges sur le réseau, vous pouvez y jeter un œil ?
 ```
+## Author
+@Smyler
 
 ## MD5
-`a5d6bb16aaebbaae69de51ba653aa358`
+dart.pcapng = a5d6bb16aaebbaae69de51ba653aa358
 
 ## Analysis
+### First stage
 1. Open the pcap in Wireshark
 ![Packets analysis](./img/00_packet_hierarchy.png)
 2. Lots of TCP/HTTP, follow the TCP stream :
@@ -27,6 +30,7 @@ Je me dirigeais vers l'épreuve de lancer de fléchettes quand j'ai fait une dé
         - on the fourth the very long base64 is written to run.ps1 
         - the last one put the run.ps1 in the registry
     - I decode run.ps1
+### Second stage
 5. run.ps1 seems to be a bit hard to decode, so let's fire up windows
 ![run.ps1](./img/02_run_ps1.png)
 6. I modify top print things and not sleep. ERROR !! We need a file created by the first stage...
@@ -58,7 +62,7 @@ while($true){
 8. The encrypted data sent by this script is the file containing the SSL key, the script take the file, xor each byte of the file with the *$long_byte* and send it.
 9. In wireshark we can see some TCP stream containing Base64 (stream 26, 29, 36, 40, 47, 51, 57, 67, 71), extract these streams in a file (*all_base64*)
 10. Write a script to decode :
-```
+```python
 import base64
 
 # Define your long_byte variable
@@ -81,8 +85,8 @@ decoded_text = ''.join(chr(byte) for byte in decoded_bytes)
 # Print the result
 print(decoded_text)
 ```
-11. After decoding each base64 blob I have the file of SSL key (*decoded_base64*) which I can load in wireshark in order to decode the TLS communication
-12. It's not looking decoded but if we go in File>Export Objects>HTTP we have a lot more object than before ! And we have file from the Hostname dartsbank.challenges.404ctf.fr, let's extract them
+11. After decoding each base64 blob I have the file of SSL key (*ssl_key_logs*) which I can load in wireshark in order to decode the TLS communication
+12. It's not looking decoded but if we go in *File>Export Objects>HTTP* we have a lot more object than before ! And we have file from the Hostname *dartsbank.challenges.404ctf.fr*, let's extract them
 13. We find the flag in the index :)
 
 ## Little bonus

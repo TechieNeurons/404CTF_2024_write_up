@@ -8,6 +8,12 @@ Retrouvez le message du Bugdroid.
 Format de flag : 404CTF{message}
 ```
 
+## Author
+@Whiplash
+
+## MD5
+Bugdroid_Fight_-_Part_1.apk = b6b8c45a4243a6de63fcdaf86a1f6a10
+
 ## Basic static
 1. It's an APK, so lets install `sudo apt-get insatall jd-gui dex2jar`
 2. Now transform the APK to JAR via dex2jar : `d2j-dex2jar Bugdroid_Fight_-_Part_1.apk`

@@ -9,6 +9,12 @@ Le CHAUSSURE, cette fameuse entité pionnière dans le domaine du sport de comba
 Format de flag : 404CTF{mot-de-passe}
 ```
 
+## Author
+@Narcisse
+
+## MD5
+intronisation = 0fb68482db31333df0cf211830b9f5ff
+
 ## Basic static
 
 ```Bash
