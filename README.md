@@ -16,4 +16,4 @@ Write up for the 404CTF 2024 from the DGSE
 - [x] [Le tir aux logs](./forensics/le_tir_aux_logs/)
 
 ### Medium
-- [ ] [Darts Bank]
+- [x] [Darts Bank](./forensics/darts_bank/)
