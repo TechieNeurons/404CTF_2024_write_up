@@ -9,6 +9,9 @@ Write up for the 404CTF 2024 from the DGSE
 - [x] [Intronisation du CHAUSSURE](./rev/intronisation_du_chaussure/)
 - [x] [Bugdroid Fight 1/2](./rev/bugdroid_fight_1/)
 
+### Medium
+- [ ] [Bugdroid Fight 2/2](./rev/bugdroid_fight_2/)
+
 ## Forensics
 ### Introduction
 - [x] [Le tir aux logs](./forensics/le_tir_aux_logs/)
