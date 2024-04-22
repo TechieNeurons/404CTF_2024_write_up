@@ -15,3 +15,4 @@ Write up for the 404CTF 2024 from the DGSE
 
 ### Medium
 - [x] [Darts Bank](./forensics/darts_bank/)
+- [ ] [Vaut mieux sécuriser que guérir](./forensics/vaut_mieux_securiser_que_guerir/)
