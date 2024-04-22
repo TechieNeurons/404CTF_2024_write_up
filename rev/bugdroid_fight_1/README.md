@@ -29,4 +29,10 @@ public class Utils {
   String lastPart = "_m3S5ag3!";
 }
 ```
-8. Just to get the middle part : `StringResources_androidKt.stringResource(R.string.attr_special, paramComposer, 0)` I know `R.string.attr_special` is 2131492905
+8. Just to get the middle part : `StringResources_androidKt.stringResource(R.string.attr_special, paramComposer, 0)` I know `R.string.attr_special` is **2131492905**
+9. We see : `StringResources_androidKt.stringResource` which mean we are looking for a string in the resources of the apk `(R.string.attr_special, paramComposer, 0)`, if we go to the function `stringResouce` we get this :
+![StringResource function](./img/02_string_resource_func.png)
+10. That tell us we need to find the ressource file but we don't have it in the jd-gui
+11. I used `apktool` in order to extract all the objects of the apk, the strings are usually in *res/values*, and if we look at the file *strings.xml* in this folder we find that :
+![Flag middle part](./img/03_middle_part.png)
+12. We just have to make the puzzle : 404CTF{Br4v0_tU_as_tr0uv3_m0N_m3S5ag3!}
