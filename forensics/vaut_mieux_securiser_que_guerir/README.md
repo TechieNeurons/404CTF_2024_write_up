@@ -97,4 +97,9 @@ PE TimeDateStamp	Wed Apr 11 04:04:54 2018
     ```
     - Now I extract the *ConsoleHost_history.txt* file with this command : `/opt/volatility3/vol.py -f memory.dmp -o ./dump/ windows.dumpfiles --virtaddr 0xd50ebb98a080`
     - the powershell history has only one line which is `rm hacked.ps1`
-4. 
+4. `/opt/volatility3/vol.py -f memory.dmp windows.pslist --pid 4852 --dump`
+
+
+### On windows 
+1. `Install-Module WinDbg -Scope CurrentUser`
+2. 
