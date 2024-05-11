@@ -15,6 +15,10 @@ Write up for the 404CTF 2024 from the DGSE
 ## Forensics
 ### Introduction
 - [x] [Le tir aux logs](./forensics/le_tir_aux_logs/)
+- [x] [Un boulevard pour pointer](./forensics/)
+
+### Easy
+- [x] [Coup de circuit 1/3](./forensics/coup_de_circuit_1/)
 
 ### Medium
 - [x] [Darts Bank](./forensics/darts_bank/)
@@ -41,6 +45,21 @@ Write up for the 404CTF 2024 from the DGSE
     - This site will help us getting more info on this watch : https://pocketwatchdatabase.com/
     - We can find a lot of info and we have **Grade/Model Total Production:	197,100**
     - So the flag is : 404CTF{197,100}
+
+### Easy
+- [ ] Coup de circuit 2/3 (Author: @Smyler)
+    > Le challenge suivant sera disponible dans la catégorie Divers une fois que vous aurez validé celui-ci.
+    > Super ! Grace à vous j'ai pu retirer le fichier de mon PC, mais pensez-vous qu'il serait possible d'en savoir un peu plus sur ce malware ?
+    > Retrouvez l'interface web du panneau de Command & Control du malware. Le flag y sera reconnaissable.
+    - Go on VirusTotal
+    - We can see this domain : takemeouttotheballgame.space which look suspicious because created in 2024 and the name is suspicious
+    - Searching the domain on google give us that : `https://nmap.online/result/a572cd2d3b48303461ec4c147ffa1fa640afae0d/panel-5d4213f3bf078fb1656a3db8348282f482601690takemeouttotheballgamespace2`
+    ```
+    Online Nmap scanner
+    https://nmap.online › result › panel-5d4213f3bf078fb1...
+    5 days ago — Scan report for "panel-5d4213f3bf078fb1656a3db8348282f482601690.takemeouttotheballgame.space" ... Enter 
+    ```
+    - By going on the link tested by this nmap we get the flag : `404CTF{5up3r_b13n_c4Ch3_gr@cE_Au_n0M_@_r4lOngE}`
 
 ## Steg
 ### Introduction
